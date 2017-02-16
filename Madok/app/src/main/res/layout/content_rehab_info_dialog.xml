@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="5dp"
+    android:paddingBottom="5dp">
+
+    <TextView
+        android:id="@+id/tvrehabName"
+        android:paddingBottom="20dp"
+        android:textSize="20dp"
+        android:textAlignment="center"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <RelativeLayout
+        android:layout_below="@+id/tvrehabName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:id="@+id/lladdress"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imAddress"
+                android:src="@drawable/ic_address"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvAddress"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/llcontact"
+            android:layout_below="@+id/lladdress"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/imContact"
+                android:src="@drawable/ic_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent" />
+
+            <TextView
+                android:id="@+id/tvContact"
+                android:textSize="15dp"
+                android:gravity="center"
+                android:clickable="true"
+                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:background="@android:color/transparent"
+            android:layout_alignParentRight="true"
+            android:text="Cancel"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textAlignment="center"
+            android:layout_marginTop="20dp"
+            android:layout_below="@id/llcontact"
+            android:textColor="@color/color_dark_gray"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </RelativeLayout>
+
+
+</RelativeLayout>
+
+
