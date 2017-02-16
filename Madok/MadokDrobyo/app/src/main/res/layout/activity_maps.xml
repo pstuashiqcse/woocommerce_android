@@ -1,0 +1,63 @@
+<fragment xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/map"
+    android:name="com.google.android.gms.maps.SupportMapFragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.mcc.madokdrobyo.activity.MapsActivity" >
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:background="@drawable/rounded_corner"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/tvSeacchedLocation"
+                android:hint="Search location"
+                android:textSize="15dp"
+                android:background="@null"
+                android:textCursorDrawable="@drawable/color_cursor"
+                android:cursorVisible="false"
+                android:layout_marginRight="15dp"
+                android:layout_width="275dp"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/ivSearch"
+                android:layout_width="35dp"
+                android:layout_height="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true"
+                android:src="@drawable/rounded_button"/>
+
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.Toolbar>
+
+    <Button
+        android:id="@+id/btnGetDirection"
+        android:layout_marginTop="500dp"
+        android:layout_marginLeft="300dp"
+        android:visibility="invisible"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+
+
+    <Button
+        android:id="@+id/btnCurrentLocation"
+        android:layout_marginTop="550dp"
+        android:layout_marginLeft="300dp"
+        android:background="@drawable/current_location"
+        android:layout_width="35dp"
+        android:layout_height="35dp" />
+
+</fragment>
+
