@@ -5,11 +5,17 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
 import com.mcc.eshopper.R;
+import com.mcc.eshopper.api.helper.RequestLogin;
+import com.mcc.eshopper.http.ResponseListener;
+import com.mcc.eshopper.model.CategoryModel;
+
+import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +34,25 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+        loadCategoryList();
+    }
+
+
+    private void loadCategoryList() {
+        RequestLogin requestLogin = new RequestLogin(MainActivity.this);
+        requestLogin.setResponseListener(new ResponseListener() {
+            @Override
+            public void onResponse(Object data) {
+                ArrayList<CategoryModel> arrayList = (ArrayList<CategoryModel>) data;
+
+                for(CategoryModel categoryModel : arrayList) {
+                    Log.e("Data: ", "Category: "+categoryModel.getName());
+                }
+
+            }
+        });
+        requestLogin.execute();
     }
 
     @Override
