@@ -1,6 +1,7 @@
 package com.mcc.eshopper.activity.general;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -13,6 +14,7 @@ import android.view.MenuItem;
 import android.widget.Button;
 
 import com.mcc.eshopper.R;
+import com.mcc.eshopper.activity.product.ProductCategory;
 import com.mcc.eshopper.api.helper.RequestLogin;
 import com.mcc.eshopper.appdata.AppConstants;
 import com.mcc.eshopper.http.ResponseListener;
@@ -42,10 +44,13 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        initVariable();
-        initUI();
-        intitFunctionality();
-        initListener();
+        Intent intent = new Intent(this, ProductCategory.class);
+        startActivity(intent);
+
+//        initVariable();
+//        initUI();
+//        intitFunctionality();
+//        initListener();
     }
 
     private void initVariable(){

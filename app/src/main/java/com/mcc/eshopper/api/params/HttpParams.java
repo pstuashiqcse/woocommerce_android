@@ -1,5 +1,8 @@
 package com.mcc.eshopper.api.params;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 /**
  * Created by Ashiq on 8/13/2016.
  */
@@ -30,5 +33,11 @@ public class HttpParams {
         return "https://testing-e-commerce.000webhostapp.com/wp-json/wc/v1/products/categories?consumer_key=ck_efd5ff803ea0468123ed4725cc76069a6f35faf7&consumer_secret=cs_74ed2623251ed5b6e793f65547639fd3b59eb0c1";
     }
 
+    public static String categoryItemApi() {
+        return "https://testing-e-commerce.000webhostapp.com/wp-json/wc/v1/products?consumer_key=ck_efd5ff803ea0468123ed4725cc76069a6f35faf7&consumer_secret=cs_74ed2623251ed5b6e793f65547639fd3b59eb0c1";
+    }
 
+    public static String productDetailsApi(int id){
+        return "https://testing-e-commerce.000webhostapp.com/wp-json/wc/v1/products/" + id + "?consumer_key=ck_efd5ff803ea0468123ed4725cc76069a6f35faf7&consumer_secret=cs_74ed2623251ed5b6e793f65547639fd3b59eb0c1";
+    }
 }

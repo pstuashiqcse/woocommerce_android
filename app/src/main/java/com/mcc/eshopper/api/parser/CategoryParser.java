@@ -3,6 +3,7 @@ package com.mcc.eshopper.api.parser;
 import com.mcc.eshopper.model.CategoryModel;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
@@ -32,7 +33,7 @@ public class CategoryParser {
                     name = jsonObject.getString(ParserKey.KEY_NAME);
                 }
                 if (jsonObject.has(ParserKey.KEY_IMAGE)) {
-                    image = jsonObject.getString(ParserKey.KEY_IMAGE);
+                    image = jsonObject.getJSONObject(ParserKey.KEY_IMAGE).getString(ParserKey.KEY_IMAGE_SOURCE);
                 }
 
                 arrayList.add(new CategoryModel(id, name, image));
@@ -46,5 +47,4 @@ public class CategoryParser {
         }
         return null;
     }
-
 }

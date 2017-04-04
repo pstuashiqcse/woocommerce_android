@@ -3,6 +3,10 @@ package com.mcc.eshopper.http;
 import android.content.Context;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
+import android.util.Log;
+import android.widget.Toast;
+
+import com.mcc.eshopper.api.params.HttpParams;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -24,7 +28,7 @@ import java.util.Map;
  */
 public abstract class BaseHttp extends AsyncTask<Void, Void, String> {
 
-    private Context mContext;
+    protected Context mContext;
     private String requestUrl, requestMethod;
     private HashMap<String, String> requestParams;
 
@@ -37,6 +41,7 @@ public abstract class BaseHttp extends AsyncTask<Void, Void, String> {
     public BaseHttp(Context context, String requestUrl) {
         this.mContext = context;
         this.requestUrl = requestUrl;
+//        this.requestParams = HttpParams.getParams();
         this.requestMethod = REQUEST_METHOD_GET;
     }
 
@@ -54,6 +59,7 @@ public abstract class BaseHttp extends AsyncTask<Void, Void, String> {
             return response;
         } else {
             // return null means no response
+            Log.d("TAG", "doInBackground: no network");
             onBackgroundTask(null);
             return null;
         }

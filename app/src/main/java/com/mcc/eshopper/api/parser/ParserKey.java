@@ -10,4 +10,15 @@ public class ParserKey {
     public static final String KEY_IMAGE = "image";
     public static final String KEY_IMAGE_SOURCE = "src";
 
+    public static final String KEY_PRODUCT_CATEGORIES = "categories";
+    public static final String KEY_PRODUCT_IMAGES = "images";
+
+    public static final String KEY_PRODUCT_TITLE = "title";
+    public static final String KEY_PRODUCT_PRICE = "price";
+    public static final String KEY_PRODUCT_REGULAR_PRICE = "regular_price";
+    public static final String KEY_PRODUCT_SALE_PRICE = "sale_price";
+
+
+
+
 }
