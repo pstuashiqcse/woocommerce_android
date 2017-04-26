@@ -7,25 +7,22 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.widget.Button;
 
 import com.mcc.eshopper.R;
 import com.mcc.eshopper.activity.product.ProductCategory;
-import com.mcc.eshopper.api.helper.RequestLogin;
-import com.mcc.eshopper.appdata.AppConstants;
-import com.mcc.eshopper.http.ResponseListener;
-import com.mcc.eshopper.model.CategoryModel;
+import com.mcc.eshopper.utility.CustomAlertDialog;
+import com.mcc.eshopper.utility.SystemUtility;
 
 import java.util.ArrayList;
 
+@Deprecated
 public class MainActivity extends AppCompatActivity {
 
     // init var
     private Context mContext;
+    private CustomAlertDialog mFragmentUtils;
 
     // init ui
     private FloatingActionButton fab;
@@ -44,31 +41,43 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        Intent intent = new Intent(this, ProductCategory.class);
-        startActivity(intent);
-
-//        initVariable();
-//        initUI();
-//        intitFunctionality();
-//        initListener();
+        initVariable();
+        initUI();
+        intitFunctionality();
+//      initListener();
     }
 
     private void initVariable(){
         mContext = MainActivity.this;
-        productList = new ArrayList<>();
+        mFragmentUtils = new CustomAlertDialog(mContext);
 
     }
+
     private void initUI(){
         setContentView(R.layout.activity_main);
 
         toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         fab = (FloatingActionButton) findViewById(R.id.fab);
     }
+
     private void intitFunctionality(){
-        loadCategoryList();
+        if (SystemUtility.isNetworkAvailable(mContext)){
+            showCategory();
+        }
+        else {
+           // mFragmentUtils.createDialog().show();
+        }
 
     }
+
+    private void showCategory() {
+        Intent intent = new Intent(this, ProductCategory.class);
+        startActivity(intent);
+        this.finish();
+    }
+
     private void initListener(){
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -80,23 +89,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
     @Override
+    protected void onResume() {
+        super.onResume();
+        intitFunctionality();
+    }
+
+    @Override
     protected void onDestroy() {
         super.onDestroy();
     }
 
-    private void loadCategoryList() {
-        RequestLogin requestLogin = new RequestLogin(MainActivity.this);
-        requestLogin.setResponseListener(new ResponseListener() {
-            @Override
-            public void onResponse(Object data) {
-                ArrayList<CategoryModel> arrayList = (ArrayList<CategoryModel>) data;
-
-                for(CategoryModel categoryModel : arrayList) {
-                    Log.e("Data: ", "CategoryModel: "+categoryModel.getName());
-                }
-
-            }
-        });
-        requestLogin.execute();
-    }
 }

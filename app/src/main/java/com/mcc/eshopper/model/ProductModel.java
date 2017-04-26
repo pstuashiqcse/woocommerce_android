@@ -1,21 +1,25 @@
 package com.mcc.eshopper.model;
 
+import java.util.ArrayList;
+
 /**
  * Created by nitul on 4/4/17.
  */
 
 public class ProductModel {
     private String title;
-    private String category;
-    private int price;
-    private int discountPrice;
+    private ArrayList <String> category;
+    private String price;
+    private String salePrice;
+    private String regularPrice;
     private String image;
 
-    public ProductModel (String title, String category, int price, int discountPrice, String image){
+    public ProductModel (String title, ArrayList <String> category, String price, String regularPrice, String salePrice, String image){
         this.title = title;
         this.category = category;
         this.price = price;
-        this.discountPrice = discountPrice;
+        this.salePrice = salePrice;
+        this.regularPrice = regularPrice;
         this.image = image;
     }
 
@@ -23,19 +27,25 @@ public class ProductModel {
         return title;
     }
 
+    public ArrayList <String> getCategory() {
+        return category;
+    }
+
+    public String getPrice() {
+        return price;
+    }
+
+    public String getRegularPrice() {
+        return regularPrice;
+    }
+
+    public String getSalePrice() {
+        return salePrice;
+    }
+
     public String getImage() {
         return image;
     }
 
-    public int getPrice() {
-        return price;
-    }
 
-    public int getDiscountPrice() {
-        return discountPrice;
-    }
-
-    public String getCategory() {
-        return category;
-    }
 }

@@ -34,11 +34,10 @@ public class RequestCategoryData extends BaseHttp{
     @Override
     public void onBackgroundTask(String response) {
 
-
-        CategoryParser categoryParser = new CategoryParser();
-        categoryModels = categoryParser.getCategoryModels(response);
-
-
+        if (response !=null){
+            CategoryParser categoryParser = new CategoryParser();
+            categoryModels = categoryParser.getCategoryModels(response);
+        }
     }
 
     @Override

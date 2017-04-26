@@ -1,4 +1,10 @@
 <resources>
-    <string title="app_name">Woo Commerce</string>
-    <string title="action_settings">Settings</string>
+    <string name="app_name">Woo Commerce</string>
+    <string name="action_settings">Settings</string>
+
+    <!--Demo Strings. Unused yet-->
+    <string name="action_refresh">Settings</string>
+    <string name="action_new">Settings</string>
+    <string name="logo_desc">App logo</string>
+
 </resources>

@@ -30,8 +30,11 @@ public class HttpParams {
     https://testing-e-commerce.000webhostapp.com/wp-json/wp/v2/pages*/
 
     public static String categoriesApi() {
-        return "https://testing-e-commerce.000webhostapp.com/wp-json/wc/v1/products/categories?consumer_key=ck_efd5ff803ea0468123ed4725cc76069a6f35faf7&consumer_secret=cs_74ed2623251ed5b6e793f65547639fd3b59eb0c1";
+        return "http://mprod.mcc.com.bd/wordpress?rest_route=/wc/v2products/categories?consumer_key=ck_c8ea9ceadd3c5ac59aad9d8184432f6a0677f35e&consumer_secret=cs_c6b015274aa1e548c62e422e24e00dbd449b283c";
     }
+//    public static String categoriesApi() {
+//        return "https://testing-e-commerce.000webhostapp.com/wp-json/wc/v1/products/categories?consumer_key=ck_efd5ff803ea0468123ed4725cc76069a6f35faf7&consumer_secret=cs_74ed2623251ed5b6e793f65547639fd3b59eb0c1";
+//    }
 
     public static String categoryItemApi() {
         return "https://testing-e-commerce.000webhostapp.com/wp-json/wc/v1/products?consumer_key=ck_efd5ff803ea0468123ed4725cc76069a6f35faf7&consumer_secret=cs_74ed2623251ed5b6e793f65547639fd3b59eb0c1";

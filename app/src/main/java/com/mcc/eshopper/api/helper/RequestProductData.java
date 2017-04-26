@@ -28,7 +28,7 @@ public class RequestProductData extends BaseHttp{
     @Override
     public void onBackgroundTask(String response) {
         ProductDataParser productDataParser = new ProductDataParser();
-        productDataParser.getProductData(response);
+        mProductModel = productDataParser.getProductData(response);
     }
 
     @Override

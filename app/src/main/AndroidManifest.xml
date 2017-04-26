@@ -3,8 +3,8 @@
     package="com.mcc.eshopper">
 
     <!-- network permissions -->
-    <uses-permission android:title="android.permission.INTERNET" />
-    <uses-permission android:title="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -13,18 +13,39 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:title=".activity.general.MainActivity"
+            android:name=".activity.general.SplashActivity"
             android:label="@string/app_name"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
-                <action android:title="android.intent.action.MAIN" />
-                <category android:title="android.intent.category.LAUNCHER" />
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
 
-        <activity android:title=".activity.product.ProductCategory"></activity>
-        <activity android:title=".activity.product.ProductList"></activity>
-        <activity android:title=".activity.product.ProductDetails"></activity>
+        <activity android:name=".activity.product.ProductCategory"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name = "android.support.PARENT_ACTIVITY"
+                android:value = ".activity.general.SplashActivity" />
+        </activity>
+
+        <activity android:name=".activity.product.ProductList"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name = "android.support.PARENT_ACTIVITY"
+                android:value = ".activity.product.ProductCategory" />
+        </activity>
+
+        <activity android:name=".activity.product.ProductDetails"
+            android:screenOrientation="portrait">
+
+            <meta-data
+                android:name = "android.support.PARENT_ACTIVITY"
+                android:value = ".activity.product.ProductList" />
+        </activity>
 
     </application>
 

@@ -1,10 +1,22 @@
 <resources>
     <!-- Default screen margins, per the Android Design guidelines. -->
-    <dimen title="activity_horizontal_margin">16dp</dimen>
-    <dimen title="activity_vertical_margin">16dp</dimen>
-    <dimen title="fab_margin">16dp</dimen>
-    <dimen title="image_height">150dp</dimen>
-    <dimen title="image_width">135dp</dimen>
-    <dimen title="grid_padding">5dp</dimen>
-    <dimen title="category_vertical_padding">5dp</dimen>
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    
+    <dimen name="image_height">150dp</dimen>
+    <dimen name="image_width">135dp</dimen>
+
+    <dimen name="textview_height">40dp</dimen>
+    
+    <dimen name="grid_padding">5dp</dimen>
+    <dimen name="category_vertical_padding">5dp</dimen>
+    
+    <!--<dimen name="cardview_margin_bottom">5dp</dimen>-->
+    <dimen name="cardview_margin">5dp</dimen>
+    
+    <!--<dimen name="cardview_height"></dimen>-->
+    <!--<dimen name="cardview_width"></dimen>-->
+    <dimen name="margin">10dp</dimen>
+
 </resources>

@@ -7,6 +7,7 @@ import android.util.Log;
 import android.widget.Toast;
 
 import com.mcc.eshopper.api.params.HttpParams;
+import com.mcc.eshopper.utility.AppUtility;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedReader;
@@ -35,8 +36,8 @@ public abstract class BaseHttp extends AsyncTask<Void, Void, String> {
     private static final String REQUEST_METHOD_GET = "GET";
     private static final String REQUEST_METHOD_POST = "POST";
 
-    private static final int READ_TIMEOUT = 10000;
-    private static final int CONNECT_TIMEOUT = 15000;
+    private static final int READ_TIMEOUT = 50000;
+    private static final int CONNECT_TIMEOUT = 50000;
 
     public BaseHttp(Context context, String requestUrl) {
         this.mContext = context;
@@ -124,6 +125,9 @@ public abstract class BaseHttp extends AsyncTask<Void, Void, String> {
                     result.append(line);
                 }
             }
+            else {
+
+            }
             httpURLConnection.disconnect();
         } catch (IOException e) {
             e.printStackTrace();
@@ -149,7 +153,7 @@ public abstract class BaseHttp extends AsyncTask<Void, Void, String> {
 
     private boolean isNetworkAvailable(Context context) {
         ConnectivityManager connectivityManager = ((ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE));
-        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnected();
+        return connectivityManager.getActiveNetworkInfo() != null && connectivityManager.getActiveNetworkInfo().isConnectedOrConnecting();
     }
 
 
